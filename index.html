@@ -35,7 +35,53 @@
         <button class="nav-btn">Galeri</button>
         <button class="nav-btn">Hizmetler</button>
         <button class="nav-btn">Özgeçmiş</button>
-        <button class="nav-btn">Çalışma Saatleri</button>
+        <button class="nav-btn" onclick="openModal()">Çalışma Saatleri</button>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Çalışma Saatleri</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Gün</th>
+                    <th>Saatler</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pazartesi</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Salı</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Çarşamba</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Perşembe</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Cuma</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Cumartesi</td>
+                    <td>10:00 - 14:00</td>
+                </tr>
+                <tr>
+                    <td>Pazar</td>
+                    <td>KAPALI</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
         <button class="nav-btn">İletişim</button>
     </nav>
 
@@ -98,6 +144,25 @@
             showSlide(currentSlideIndex);
             setInterval(() => changeSlide(1), 4500);
         });
+    </script>
+
+    <script>function openModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.remove("hidden");
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.add("hidden");
+    }
+    
+    // Modal dışına tıklayınca kapatma
+    window.addEventListener("click", (event) => {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
     </script>
     
 </body>
