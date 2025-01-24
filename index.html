@@ -40,18 +40,68 @@
     </nav>
 
     <main class="content">
-        <section class="welcome">
-            <p>Genel bir hoş geldiniz yazısı vs. mesai saatleri burada olabilir</p>
-        </section>
+       
         <section class="gallery">
             <p>Arkada medical bir foto layout</p>
         </section>
+        <!-- slayt foto kısmı başlangıç -->
+    <div class="slideshow-container">
+        
+        <div class="slide fade">
+            <img src="https://picsum.photos/1300/600" alt="Lorem Image">
+
+        </div>
+    
+        
+        <div class="slide fade">
+            <img src="https://picsum.photos/1300/500" alt="Lorem Image">
+
+        </div>
+    
+        
+        <div class="slide fade">
+            <img src="https://picsum.photos/1300/400" alt="Lorem Image">
+
+        </div>
+    
+        
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
     </main>
 
+
+    <!-- slayt foto kısmı bitiş -->
     
     <footer class="footer-loc">
-        <div class="contact">İletişim adres vs.</div>
+        <div class="contact">İletişim adres vs. 
+        </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.698981323612!2d26.511111303833786!3d38.6361430375003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bba8b25a3df6b3%3A0x5b39178d7d0f5744!2sKaraburun!5e0!3m2!1str!2str!4v1737739280572!5m2!1str!2str" width="360" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </footer>
+
+    <script>
+        let currentSlideIndex = 0;
+    
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            if (index >= slides.length) currentSlideIndex = 0; 
+            if (index < 0) currentSlideIndex = slides.length - 1; 
+    
+            slides.forEach(slide => slide.style.display = 'none'); 
+            slides[currentSlideIndex].style.display = 'block'; 
+        }
+    
+        function changeSlide(step) {
+            currentSlideIndex += step;
+            showSlide(currentSlideIndex);
+        }
+    
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlideIndex);
+            setInterval(() => changeSlide(1), 4500);
+        });
+    </script>
+    
 </body>
 </html>

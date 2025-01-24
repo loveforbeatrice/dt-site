@@ -1,17 +1,23 @@
 /* Genel stiller */
-body {
-    margin: 0;
+
+html, body {
+    height: 100%; 
+    margin:0;
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
+
 
 /* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background-color: white;
     border-bottom: 2px solid #ddd;
 }
@@ -59,12 +65,10 @@ body {
 .content {
     padding: 20px;
     text-align: center;
+    flex-grow: 1;
 }
 
-.welcome {
-    margin-bottom: 30px;
-    font-size: 18px;
-}
+
 
 .gallery {
     font-size: 16px;
@@ -73,7 +77,7 @@ body {
 
 /* Footer */
 .footer-loc {
-    position: fixed;
+    
     bottom: 0;      
     right: 0; 
     display: flex;
@@ -82,10 +86,17 @@ body {
     padding: 10px 20px;
     background-color: #f9f9f9;
     border-top: 2px solid #ddd;
+    
 }
 
 .contact {
+   
+    
+    height: 200px;
     font-size: 14px;
+    background-color: #c530d8;
+    bottom: 0;      
+    left: 0;
 }
 
 .map-btn {
@@ -101,8 +112,56 @@ body {
     background-color: #9e27a5;
 }
 
-.contact{
-    position: fixed;
-    bottom: 0;      
-    left: 0;
+
+
+/* Slayt kısmı */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.slide {
+    display: none; 
+    position: relative;
+}
+
+
+.slide img {
+    width: 100%; 
+    border-radius: 8px; 
+}
+
+/*ok düğmeleri */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    z-index: 1000;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Geçiş efekti */
+.fade {
+    animation: fadeEffect 1.8s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.23; }
+    to { opacity: 1; }
 }
