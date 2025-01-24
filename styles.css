@@ -1,0 +1,99 @@
+/* Genel stiller */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-btn {
+    background-color: #c530d8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    background-color: #9e27a5;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.gallery {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+}
+
+.contact {
+    font-size: 14px;
+}
+
+.map-btn {
+    background-color: #c530d8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.map-btn:hover {
+    background-color: #9e27a5;
+}
