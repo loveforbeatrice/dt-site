@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diş Hekimi</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
     
-        <header class="header">
-            <div class="logo">Diş Hekimi Begüm Akdeniz Tali</div>
+        
             <!-- <div class="icons">
                 <div class="icon">
                     <a href="https://www.google.com/maps" target="_blank">
@@ -27,61 +27,65 @@
                     </a>
                 </div>
             </div> -->
-
-            <nav class="navbar">
-                <button class="nav-btn">Galeri</button>
-                <button class="nav-btn">Hizmetler</button>
-                <button class="nav-btn">Özgeçmiş</button>
-                <button class="nav-btn" onclick="openModal()">Çalışma Saatleri</button>
-        
-                <div id="modal" class="modal hidden">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal()">&times;</span>
-                        <h2>Çalışma Saatleri</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gün</th>
-                                    <th>Saatler</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="monday">
-                                    <td>Pazartesi</td>
-                                    <td>09:00 - 18:00</td>
-                                </tr>
-                                <tr class="tuesday">
-                                    <td>Salı</td>
-                                    <td>09:00 - 18:00</td>
-                                </tr>
-                                <tr class="wednesday">
-                                    <td>Çarşamba</td>
-                                    <td>09:00 - 18:00</td>
-                                </tr>
-                                <tr class="thursday">
-                                    <td>Perşembe</td>
-                                    <td>09:00 - 18:00</td>
-                                </tr>
-                                <tr class="friday">
-                                    <td>Cuma</td>
-                                    <td>09:00 - 18:00</td>
-                                </tr>
-                                <tr class="saturday">
-                                    <td>Cumartesi</td>
-                                    <td>10:00 - 14:00</td>
-                                </tr>
-                                <tr class="sunday">
-                                    <td>Pazar</td>
-                                    <td>KAPALI</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <header class="header">
+                <a href="#" class="logo">Logo</a>
+                <i class='bx bx-menu' id="menu-icon"></i>
+                <nav class="navbar">
+                    <a href="#">Galeri</a>
+                    <a href="#">Hizmetlerimiz</a>
+                    <a href="#">Özgeçmiş</a>
+                    <a href="#" onclick="openModal()">Çalışma Saatleri</a>
+                    <div id="modal" class="modal hidden">
+                        <div class="modal-content">
+                            <span class="close-btn" onclick="closeModal()">&times;</span>
+                            <h2>Çalışma Saatleri</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Gün</th>
+                                        <th>Saatler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="monday">
+                                        <td>Pazartesi</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr class="tuesday">
+                                        <td>Salı</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr class="wednesday">
+                                        <td>Çarşamba</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr class="thursday">
+                                        <td>Perşembe</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr class="friday">
+                                        <td>Cuma</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr class="saturday">
+                                        <td>Cumartesi</td>
+                                        <td>10:00 - 14:00</td>
+                                    </tr>
+                                    <tr class="sunday">
+                                        <td>Pazar</td>
+                                        <td>KAPALI</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                    <a href="#">İletişim</a>
+                </nav>
+            </header>
+            <div class="nav-bg"></div>
+    
+            
         
-                <button class="nav-btn">İletişim</button>
-            </nav>
-        </header>
     
     
 
@@ -127,111 +131,13 @@
     <footer class="footer-loc">
         <div class="contact">İletişim adres vs. 
         </div>
-        <div id= "map" style="width: 20%;height: 100%;"></div>
+        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1134.0261194691407!2d26.51306709233563!3d38.64431203333294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bba8b25a3df6b3%3A0x5b39178d7d0f5744!2sKaraburun!5e0!3m2!1str!2str!4v1737832169519!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
     </footer>
 
-    <script>
-        let currentSlideIndex = 0;
-    
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            if (index >= slides.length) currentSlideIndex = 0; 
-            if (index < 0) currentSlideIndex = slides.length - 1; 
-    
-            slides.forEach(slide => slide.style.display = 'none'); 
-            slides[currentSlideIndex].style.display = 'block'; 
-        }
-    
-        function changeSlide(step) {
-            currentSlideIndex += step;
-            showSlide(currentSlideIndex);
-        }
-    
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentSlideIndex);
-            setInterval(() => changeSlide(1), 3500);
-        });
-    </script>
+    <script src="script.js"></script>
 
-    <script>function openModal() {
-        const modal = document.getElementById("modal");
-        modal.classList.remove("hidden");
-    
-        // Gün adlarını dizi olarak tanımla
-        const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    
-        // Bugünün gün indeksini al
-        const todayIndex = new Date().getDay();
-    
-        // Bugünkü sınıfı bul
-        const todayClass = days[todayIndex];
-    
-        // Önceki highlight sınıfını kaldır (varsa)
-        const previousHighlight = document.querySelector(".highlight");
-        if (previousHighlight) {
-            previousHighlight.classList.remove("highlight");
-        }
-    
-        // Bugünün satırını vurgula
-        const todayRow = document.querySelector(`.${todayClass}`);
-        if (todayRow) {
-            todayRow.classList.add("highlight");
-        }
-    }
-    
-    function closeModal() {
-        const modal = document.getElementById("modal");
-        modal.classList.add("hidden");
-    }
-    
-    // Modal dışına tıklayınca kapatma
-    window.addEventListener("click", (event) => {
-        const modal = document.getElementById("modal");
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-    </script>
-   <script>
-    function initMap() {
-        // İş yerinin koordinatlarını salladım
-        const karaburun = { lat: 38.63969791125514, lng: 26.517034139709185 };
 
-       
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 18, 
-            center: karaburun,
-        });
-
-        // Marker add
-        const marker = new google.maps.Marker({
-            position: karaburun,
-            map: map,
-            title: "Klinik",
-        });
-
-        // Marker dialog box
-        const infoWindow = new google.maps.InfoWindow({
-            content: `
-                <h3>Klinik</h3>
-                <p>Diş Hekimi Begüm Akdeniz Tali'nin Kliniği</p>
-            `,
-        });
-
-        // Marker 
-        marker.addListener("click", () => {
-            infoWindow.open(map, marker);
-        });
-    }
-</script>
-
-<script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrhAQJv5-i3Z-AfhHtLSmbBCTkz2UukAk&callback=initMap" 
-    async 
-    defer>
-</script>
-    
     
 </body>
 </html>
