@@ -34,50 +34,50 @@
                 <button class="nav-btn">Özgeçmiş</button>
                 <button class="nav-btn" onclick="openModal()">Çalışma Saatleri</button>
         
-        <div id="modal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <h2>Çalışma Saatleri</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Gün</th>
-                            <th>Saatler</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pazartesi</td>
-                            <td>10:00 - 16:00</td>
-                        </tr>
-                        <tr>
-                            <td>Salı</td>
-                            <td>10:00 - 16:00</td>
-                        </tr>
-                        <tr>
-                            <td>Çarşamba</td>
-                            <td>10:00 - 16:00</td>
-                        </tr>
-                        <tr>
-                            <td>Perşembe</td>
-                            <td>10:00 - 16:00</td>
-                        </tr>
-                        <tr>
-                            <td>Cuma</td>
-                            <td>10:00 - 16:00</td>
-                        </tr>
-                        <tr>
-                            <td>Cumartesi</td>
-                            <td>KAPALI</td>
-                        </tr>
-                        <tr>
-                            <td>Pazar</td>
-                            <td>KAPALI</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                <div id="modal" class="modal hidden">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal()">&times;</span>
+                        <h2>Çalışma Saatleri</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Gün</th>
+                                    <th>Saatler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="monday">
+                                    <td>Pazartesi</td>
+                                    <td>09:00 - 18:00</td>
+                                </tr>
+                                <tr class="tuesday">
+                                    <td>Salı</td>
+                                    <td>09:00 - 18:00</td>
+                                </tr>
+                                <tr class="wednesday">
+                                    <td>Çarşamba</td>
+                                    <td>09:00 - 18:00</td>
+                                </tr>
+                                <tr class="thursday">
+                                    <td>Perşembe</td>
+                                    <td>09:00 - 18:00</td>
+                                </tr>
+                                <tr class="friday">
+                                    <td>Cuma</td>
+                                    <td>09:00 - 18:00</td>
+                                </tr>
+                                <tr class="saturday">
+                                    <td>Cumartesi</td>
+                                    <td>10:00 - 14:00</td>
+                                </tr>
+                                <tr class="sunday">
+                                    <td>Pazar</td>
+                                    <td>KAPALI</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
         
                 <button class="nav-btn">İletişim</button>
             </nav>
@@ -116,8 +116,8 @@
     
     
         
-        <a class="prev" onclick="changeSlide(-1)">&#10104;</a>
-        <a class="next" onclick="changeSlide(1)">&#10105;</a>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
     </main>
 
@@ -150,13 +150,34 @@
         
         document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentSlideIndex);
-            setInterval(() => changeSlide(1), 4500);
+            setInterval(() => changeSlide(1), 3500);
         });
     </script>
 
     <script>function openModal() {
         const modal = document.getElementById("modal");
         modal.classList.remove("hidden");
+    
+        // Gün adlarını dizi olarak tanımla
+        const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    
+        // Bugünün gün indeksini al
+        const todayIndex = new Date().getDay();
+    
+        // Bugünkü sınıfı bul
+        const todayClass = days[todayIndex];
+    
+        // Önceki highlight sınıfını kaldır (varsa)
+        const previousHighlight = document.querySelector(".highlight");
+        if (previousHighlight) {
+            previousHighlight.classList.remove("highlight");
+        }
+    
+        // Bugünün satırını vurgula
+        const todayRow = document.querySelector(`.${todayClass}`);
+        if (todayRow) {
+            todayRow.classList.add("highlight");
+        }
     }
     
     function closeModal() {
