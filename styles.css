@@ -234,6 +234,11 @@ tbody tr td:first-child {
 .fade {
     animation: fadeEffect 1.8s ease-in-out;
 }
+#map {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+}
 
 @keyframes fadeEffect {
     from { opacity: 0.23; }
