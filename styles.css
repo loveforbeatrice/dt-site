@@ -72,6 +72,16 @@ body {
   .header {
     padding: 1.25rem 4%;
   }
+  footer .footer-div{
+    flex-direction: column;
+    padding: 20px 30px;
+    align-items:center;
+  }
+  .contact{
+    width: max-content;
+
+  }
+
 }
 @media (max-width: 768px) {
   #menu-icon {
@@ -107,6 +117,7 @@ body {
   .nav-bg.active {
     display: block;
   }
+
 }
 .modal {
     display: flex;
@@ -218,33 +229,70 @@ tbody tr td:first-child {
     
     bottom: 0;      
     right: 0; 
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f9f9f9;
+   
+    background-color: #0e0000cf;
     border-top: 2px solid #ddd;
     
+}
+.footer-div{
+  bottom: 0;      
+  right: 0; 
+  display: flex;
+  
+  justify-content: space-between;
+  padding-top: 15px;
+  align-items: flex-start;
+ 
 }
 
 .contact {
    
-    
-    height: 200px;
+    width: 25%;
+    height: fit-content;
+    max-width: 400px;
+    min-width: 250px;
     font-size: 14px;
-    background-color: #c530d8;
     bottom: 0;      
     left: 0;
-}
+    border-radius: 5%;
 
+    color: rgb(207, 204, 204);
+    text-align: center;
+    margin-left: 10px;
+    font-family:fantasy;
+    
+    margin-top:35px;
+    margin-bottom: 35px;
+    
+}
+footer a {
+  color: rgb(207, 204, 204);
+  font-size: 14px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+footer a:hover {
+  color: green;
+}
 /* Modal açıkken bugünkü satırın vurgulanması */
 .highlight {
     background-color: rgba(255, 215, 0, 0.4);
     font-weight: bold;
 }
 
-
-
+h3{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-top: 5px;
+  margin-bottom:10px ;
+  
+}
+footer div{
+  list-style: none;
+}
 
 
 /* Slayt kısmı */
@@ -297,15 +345,16 @@ tbody tr td:first-child {
 }
 #map {
     width: 300px; 
-    height: 300px; 
-    
+    height: 200px; 
     bottom: 20px;
     right: 20px;
     border: 2px solid #000;
     border-radius: 8px;
   }
 
+
 @keyframes fadeEffect {
     from { opacity: 0.23; }
     to { opacity: 1; }
 }
+
