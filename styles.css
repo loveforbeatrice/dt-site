@@ -57,10 +57,13 @@ body {
   font-size: 18px;
   text-decoration: none;
   margin-left: 35px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .navbar a:hover {
-  color: rgb(13, 19, 176);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 120;
+
 }
 #menu-icon {
   font-size: 36px;
