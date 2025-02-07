@@ -360,4 +360,22 @@ footer div{
     from { opacity: 0.23; }
     to { opacity: 1; }
 }
+.gallery {
+    width: 90%;  
+    margin: 20px auto; 
+    overflow: hidden; 
+}
+
+.gallery img {
+    width: 30%; 
+    height: 200px; 
+    object-fit: cover; 
+    float: left; 
+    margin: 10px; 
+    border-radius: 8px; 
+}
+.gallery img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
 
